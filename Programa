@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	int	N,n=0,i,*a,*b;
+	
+	cin>>N;
+	a=new int[N]; //arreglo de donde salto
+	b=new int[N]; //arreglo donde ya he pasado
+			
+	for(i=0;i<N;i++)
+		{cin>>a[i];	//llene mi arreglo
+			b[i]=0;
+	    }
+	n=i=0;			//n es el indice de don he saltado e i cuantas veces he saltado
+	while(a[n]!=a[N-1] && n>=0 && n<=N-1)
+		{	
+			if(b[n]==1) break;
+			else b[n]=1;
+			i++;
+			n=n+a[n];	
+			//cout<<a[N-1]<<" "<<i<<" ";
+			
+		}
+	if(a[n]==0 && n==N-1)cout<<i;
+	else cout<<"-1";
+	
+	return 0;
